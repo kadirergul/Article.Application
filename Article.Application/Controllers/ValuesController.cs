@@ -10,11 +10,19 @@ namespace Article.Application.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private DataContext _dataContext;
+
+        public ValuesController(DataContext dataContext){
+            _dataContext = dataContext;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult GetValues()
         {
-            return new string[] { "value1", "value2" };
+            var values = _dataContext.Articles.ToList();
+
+            return Ok(values);
         }
 
         // GET api/values/5
