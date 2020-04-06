@@ -13,6 +13,6 @@ namespace Article.Application
 
         }
 
-        public DbSet<Models.Article> Articles { get; set; }
+        public DbSet<Models.ArticleModel> Articles { get; set; }
     }
 }
