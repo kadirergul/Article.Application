@@ -10,5 +10,6 @@ namespace Article.Application.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string ArticleText { get; set; }
+        public string Writer { get; set; }
     }
 }
